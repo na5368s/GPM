@@ -13,7 +13,7 @@ import org.camunda.bpm.engine.ProcessEngine;
  */
 @ProcessApplication
 public class CamundaBpmProcessApplication extends ServletProcessApplication {
-  
+
   private static final String PROCESS_DEFINITION_KEY = "bachelorthesis";
 
   /**
