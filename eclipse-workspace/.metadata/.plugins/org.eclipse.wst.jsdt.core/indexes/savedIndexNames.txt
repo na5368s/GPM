@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+/home/gpm17/eclipse-workspace/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+922493006.index
+3517155981.index
+3853021826.index
+2954427005.index
+3417772810.index
+3189556599.index
