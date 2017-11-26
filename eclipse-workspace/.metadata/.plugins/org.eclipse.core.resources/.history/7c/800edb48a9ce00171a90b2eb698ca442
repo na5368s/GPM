@@ -1,0 +1,5 @@
+package de.fhaachen.gpm.practicum.RestServer;
+
+public class StudentController {
+
+}

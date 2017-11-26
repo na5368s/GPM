@@ -1,0 +1,91 @@
+2017-11-21 10:27:21,699 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/archetypes/maven-archetype-quickstart/1.1/maven-archetype-quickstart-1.1.jar
+2017-11-21 10:27:21,779 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/archetypes/maven-archetype-quickstart/1.1/maven-archetype-quickstart-1.1.jar
+2017-11-21 10:27:21,830 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/archetypes/maven-archetype-quickstart/1.1/maven-archetype-quickstart-1.1.pom
+2017-11-21 10:27:21,858 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/archetypes/maven-archetype-quickstart/1.1/maven-archetype-quickstart-1.1.pom
+2017-11-21 10:27:39,994 [Worker-10] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' /home/gpm17/eclipse-workspace/RestServer/pom.xml
+2017-11-21 10:27:44,212 [Worker-10] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: de.fhaachen.gpm.practicum:RestServer:0.0.1-SNAPSHOT @ /home/gpm17/eclipse-workspace/RestServer/pom.xml.
+2017-11-21 10:27:47,277 [Worker-10] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RestServer/src/main/java
+2017-11-21 10:27:47,295 [Worker-10] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RestServer/src/test/java
+2017-11-21 10:27:47,759 [Worker-10] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 7 sec
+2017-11-21 10:27:50,327 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 10:27:50,329 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/main/resources
+2017-11-21 10:27:50,346 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 10:27:50,347 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/test/resources
+2017-11-21 10:28:51,709 [Worker-2] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: de.fhaachen.gpm.practicum:RestServer:0.0.1-SNAPSHOT @ /home/gpm17/eclipse-workspace/RestServer/pom.xml.
+2017-11-21 10:28:54,986 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 10:28:54,986 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/main/resources
+2017-11-21 10:28:54,987 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/main/resources
+2017-11-21 10:28:55,001 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 10:28:55,002 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/test/resources
+2017-11-21 10:28:59,729 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 10:28:59,730 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/main/resources
+2017-11-21 10:28:59,730 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/main/resources
+2017-11-21 10:28:59,743 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 10:28:59,743 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/test/resources
+2017-11-21 10:29:40,507 [Worker-13] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/gpm17/eclipse-workspace/RestServer
+2017-11-21 10:29:40,510 [Worker-13] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2017-11-21 10:30:09,003 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 10:30:09,004 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/main/resources
+2017-11-21 10:30:09,005 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/main/resources
+2017-11-21 10:30:09,017 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 10:30:09,018 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/test/resources
+2017-11-21 10:30:26,331 [Worker-10] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-11-21 10:30:28,121 [Worker-10] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: de.fhaachen.gpm.practicum:RestServer:0.0.1-SNAPSHOT @ /home/gpm17/eclipse-workspace/RestServer/pom.xml.
+2017-11-21 10:30:29,511 [Worker-10] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RestServer/src/main/java
+2017-11-21 10:30:29,518 [Worker-10] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RestServer/src/test/java
+2017-11-21 10:30:30,025 [Worker-10] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 3 sec
+2017-11-21 10:30:31,647 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 10:30:31,656 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/main/resources
+2017-11-21 10:30:31,656 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/main/resources
+2017-11-21 10:30:31,684 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 10:30:31,684 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/test/resources
+2017-11-21 11:42:37,266 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 11:42:37,273 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/main/resources
+2017-11-21 11:42:37,273 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/main/resources
+2017-11-21 11:42:37,286 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 11:42:37,287 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/test/resources
+2017-11-21 11:42:46,013 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 11:42:46,013 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/main/resources
+2017-11-21 11:42:46,014 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/main/resources
+2017-11-21 11:42:46,028 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 11:42:46,029 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/test/resources
+2017-11-21 11:44:05,311 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 11:44:05,361 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-21 11:44:05,380 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-21 11:44:05,399 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 11:44:05,400 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/test/resources
+2017-11-21 11:45:11,722 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 11:45:11,724 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-21 11:45:11,818 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-21 11:45:11,848 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 11:45:11,854 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/test/resources
+2017-11-21 11:45:24,496 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 11:45:24,499 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-21 11:45:24,503 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-21 11:45:24,518 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 11:45:24,519 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/test/resources
+2017-11-21 11:46:27,574 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 11:46:27,602 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-21 11:46:27,609 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-21 11:46:27,633 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 11:46:27,633 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/test/resources
+2017-11-21 11:46:52,748 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 11:46:52,750 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-21 11:46:52,751 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-21 11:46:52,774 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 11:46:52,775 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/test/resources
+2017-11-21 11:47:41,559 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 11:47:41,571 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-21 11:47:41,573 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-21 11:47:41,586 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 11:47:41,586 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/test/resources
+2017-11-21 11:47:46,153 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 11:47:46,154 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-21 11:47:46,162 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-21 11:47:46,187 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 11:47:46,188 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/test/resources
+2017-11-21 11:48:04,410 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 11:48:04,412 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-21 11:48:04,421 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-21 11:48:04,436 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-21 11:48:04,450 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gpm17/eclipse-workspace/RestServer/src/test/resources

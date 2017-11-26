@@ -1,0 +1,10 @@
+127.0.0.1 - - [21/Nov/2017:11:55:42 +0100] "GET / HTTP/1.1" 404 1069
+127.0.0.1 - - [21/Nov/2017:11:59:06 +0100] "POST /SOAP-Dienst/services/ApprovalService?wsdl HTTP/1.1" 500 550
+127.0.0.1 - - [21/Nov/2017:12:09:29 +0100] "GET / HTTP/1.1" 404 1069
+127.0.0.1 - - [21/Nov/2017:12:11:35 +0100] "POST /SOAP-Dienst/services/ApprovalService?wsdl HTTP/1.1" 200 388
+127.0.0.1 - - [21/Nov/2017:12:14:16 +0100] "POST /SOAP-Dienst/services/ApprovalService?wsdl HTTP/1.1" 200 388
+127.0.0.1 - - [21/Nov/2017:12:28:56 +0100] "POST /SOAP-Dienst/services/ApprovalService?wsdl HTTP/1.1" 200 388
+127.0.0.1 - - [21/Nov/2017:13:24:15 +0100] "POST /SOAP-Dienst/services/ApprovalService?wsdl HTTP/1.1" 200 388
+127.0.0.1 - - [21/Nov/2017:13:31:52 +0100] "POST /SOAP-Dienst/services/ApprovalService?wsdl HTTP/1.1" 200 388
+127.0.0.1 - - [21/Nov/2017:13:39:10 +0100] "POST /SOAP-Dienst/services/ApprovalService?wsdl HTTP/1.1" 200 388
+127.0.0.1 - - [21/Nov/2017:13:45:00 +0100] "POST /SOAP-Dienst/services/ApprovalService?wsdl HTTP/1.1" 200 388
