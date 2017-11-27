@@ -13,13 +13,10 @@
       </bpmn:lane>
       <bpmn:lane id="Lane_student" name="Student">
         <bpmn:flowNodeRef>bachelorarbeit_schreiben</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>antrag_einreichen</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>bachelorarbeit_abgegeben</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>antrag_unterschreiben</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>note_besprechen</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>kolloquium_halten</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>termin_wahrnehmen</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>benachrichtigung_erhalten</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>BoundaryEvent_0a2n8lj</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>bachelorarbeit_beginnen</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>materialformular_abgeben</bpmn:flowNodeRef>
@@ -28,7 +25,6 @@
         <bpmn:flowNodeRef>bachelorarbeit_bestanden_urkunde</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>note_besprechen_gw</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>kolloquium_vereinbaren</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>keine_zulassung_erhalten</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>termin_beantworten</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>student_informieren</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>bachelorarbeit_durchgefallen</bpmn:flowNodeRef>
@@ -37,7 +33,6 @@
         <bpmn:flowNodeRef>voraussetzungen_ueberpruefen</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_pruefungsamt" name="Prüfungsamt">
-        <bpmn:flowNodeRef>zulassung_genehmigen</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>bachelorarbeit_entgegennehmen</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>materialformular_erhalten</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>bachelorurkunde_erstellen</bpmn:flowNodeRef>
@@ -45,17 +40,21 @@
         <bpmn:flowNodeRef>verfassungszeit_ueberschritten</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>bearbeitungszeit_abgelaufen</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>noten_eintragung</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_0oq4be9</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_system" name="System">
         <bpmn:flowNodeRef>termin_bestaetigt</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>voraussetzung</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>zulassung_verweigern</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>voraussetzungen</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>bachelorarbeit_bestanden</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>bachelorarbeit_nicht_bestanden</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_1wa55hn</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_0lw7w8r</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>antrag_bereitstellen</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_1s0ujmq</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>voraussetzung</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>zulassung_verweigern</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_186xgsh</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_1fzrzo0</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>keine_zulassung_erhalten</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
     <bpmn:manualTask id="ManualTask_zulassung_genehmigen" name="Zulassung genehmigen">
@@ -72,21 +71,16 @@
     <bpmn:startEvent id="bachelorarbeit_beginnen" name="Bachelorarbeit beginnen">
       <bpmn:outgoing>SequenceFlow_16pumae</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:sequenceFlow id="SequenceFlow_01kxuf5" name="erfüllt" sourceRef="voraussetzung" targetRef="antrag_bereitstellen">
+    <bpmn:sequenceFlow id="SequenceFlow_01kxuf5" name="erfüllt" sourceRef="voraussetzung" targetRef="Task_186xgsh">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression"><![CDATA[${result == "true"}]]></bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:sequenceFlow id="SequenceFlow_1cv3yda" sourceRef="antrag_bereitstellen" targetRef="antrag_unterschreiben" />
     <bpmn:sequenceFlow id="SequenceFlow_16pumae" sourceRef="bachelorarbeit_beginnen" targetRef="Task_1uh6066" />
-    <bpmn:sequenceFlow id="SequenceFlow_1qafgm7" name="nicht erfüllt" sourceRef="voraussetzung" targetRef="zulassung_verweigern">
+    <bpmn:sequenceFlow id="SequenceFlow_1qafgm7" name="nicht erfüllt" sourceRef="voraussetzung" targetRef="Task_1fzrzo0">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression"><![CDATA[${result == "false"}]]></bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:sequenceFlow id="SequenceFlow_0umakwk" sourceRef="benachrichtigung_erhalten" targetRef="keine_zulassung_erhalten" />
-    <bpmn:sequenceFlow id="SequenceFlow_06755ew" sourceRef="antrag_unterschreiben" targetRef="antrag_einreichen" />
-    <bpmn:sequenceFlow id="SequenceFlow_15e2326" sourceRef="antrag_einreichen" targetRef="zulassung_genehmigen" />
-    <bpmn:sequenceFlow id="SequenceFlow_0w9i1pj" sourceRef="zulassung_genehmigen" targetRef="bachelorarbeit_schreiben" />
     <bpmn:sequenceFlow id="SequenceFlow_0chee05" sourceRef="BoundaryEvent_0a2n8lj" targetRef="bearbeitungszeit_abgelaufen" />
     <bpmn:manualTask id="bachelorarbeit_schreiben" name="Bachelorarbeit schreiben">
-      <bpmn:incoming>SequenceFlow_0w9i1pj</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_0l29bup</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0evp309</bpmn:outgoing>
       <bpmn:dataOutputAssociation id="DataOutputAssociation_1dqh6zl">
         <bpmn:targetRef>DataObjectReference_0rk3ynh</bpmn:targetRef>
@@ -98,14 +92,6 @@
         <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">10 Wochen</bpmn:timeDuration>
       </bpmn:timerEventDefinition>
     </bpmn:boundaryEvent>
-    <bpmn:userTask id="antrag_einreichen" name="Antrag einreichen">
-      <bpmn:incoming>SequenceFlow_06755ew</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_15e2326</bpmn:outgoing>
-    </bpmn:userTask>
-    <bpmn:userTask id="zulassung_genehmigen" name="Zulassung genehmigen">
-      <bpmn:incoming>SequenceFlow_15e2326</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0w9i1pj</bpmn:outgoing>
-    </bpmn:userTask>
     <bpmn:dataObjectReference id="DataObjectReference_0rk3ynh" dataObjectRef="DataObject_01pg860" />
     <bpmn:dataObject id="DataObject_01pg860" />
     <bpmn:manualTask id="bachelorarbeit_abgegeben" name="Bachelorarbeit abgeben">
@@ -133,10 +119,6 @@
     <bpmn:sequenceFlow id="SequenceFlow_0n56s60" name="nein" sourceRef="termin_bestaetigt" targetRef="termin_vorschlagen">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression"><![CDATA[${result == "false"}]]></bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:manualTask id="antrag_unterschreiben" name="Antrag unterschreiben">
-      <bpmn:incoming>SequenceFlow_1cv3yda</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_06755ew</bpmn:outgoing>
-    </bpmn:manualTask>
     <bpmn:sequenceFlow id="SequenceFlow_0p88aec" name="nicht erfüllt" sourceRef="voraussetzungen" targetRef="bachelorarbeit_nicht_bestanden">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression"><![CDATA[${result == "false"}]]></bpmn:conditionExpression>
     </bpmn:sequenceFlow>
@@ -159,10 +141,6 @@
     </bpmn:manualTask>
     <bpmn:sequenceFlow id="SequenceFlow_0q1t0gt" sourceRef="materialformular_erhalten" targetRef="bachelorurkunde_erstellen" />
     <bpmn:sequenceFlow id="SequenceFlow_1uhtkky" sourceRef="bachelorurkunde_erstellen" targetRef="bachelorurkunde_abholen" />
-    <bpmn:receiveTask id="benachrichtigung_erhalten" name="Benachrichtigung erhalten">
-      <bpmn:incoming>SequenceFlow_0url2i3</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0umakwk</bpmn:outgoing>
-    </bpmn:receiveTask>
     <bpmn:sequenceFlow id="SequenceFlow_1r70zba" sourceRef="materialformular_abgeben" targetRef="materialformular_erhalten" />
     <bpmn:parallelGateway id="materialformular_erhalten" name="Materialformular erhalten">
       <bpmn:incoming>SequenceFlow_1r70zba</bpmn:incoming>
@@ -204,17 +182,7 @@
     <bpmn:sequenceFlow id="SequenceFlow_0znfz7w" name="nein" sourceRef="bachelorarbeit_bestanden" targetRef="student_informieren">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression"><![CDATA[${result == "false"}]]></bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:exclusiveGateway id="voraussetzung" name="Voraussetzung">
-      <bpmn:incoming>SequenceFlow_1cme36c</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_01kxuf5</bpmn:outgoing>
-      <bpmn:outgoing>SequenceFlow_1qafgm7</bpmn:outgoing>
-    </bpmn:exclusiveGateway>
     <bpmn:dataStoreReference id="DataStoreReference_19jl9np" name="Datenbank" />
-    <bpmn:sequenceFlow id="SequenceFlow_0url2i3" sourceRef="zulassung_verweigern" targetRef="benachrichtigung_erhalten" />
-    <bpmn:sendTask id="zulassung_verweigern" name="Zulassung verweigern" camunda:class="de.fhaachen.gpm.practicum.Test">
-      <bpmn:incoming>SequenceFlow_1qafgm7</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0url2i3</bpmn:outgoing>
-    </bpmn:sendTask>
     <bpmn:exclusiveGateway id="voraussetzungen" name="Voraussetzungen">
       <bpmn:incoming>SequenceFlow_0bxmwzm</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1g5z7wt</bpmn:outgoing>
@@ -236,9 +204,6 @@
     <bpmn:sequenceFlow id="SequenceFlow_075l8xt" sourceRef="bearbeitungszeit_abgelaufen" targetRef="verfassungszeit_ueberschritten" />
     <bpmn:endEvent id="verfassungszeit_ueberschritten" name="Verfassungszeit überschritten">
       <bpmn:incoming>SequenceFlow_075l8xt</bpmn:incoming>
-    </bpmn:endEvent>
-    <bpmn:endEvent id="keine_zulassung_erhalten" name="Keine Zulassung erhalten">
-      <bpmn:incoming>SequenceFlow_0umakwk</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:endEvent id="bachelorarbeit_nicht_bestanden" name="Bachelorarbeit nicht bestanden">
       <bpmn:incoming>SequenceFlow_0p88aec</bpmn:incoming>
@@ -281,16 +246,14 @@
       <bpmn:incoming>SequenceFlow_1ve1026</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0bxmwzm</bpmn:outgoing>
     </bpmn:task>
-    <bpmn:userTask id="antrag_bereitstellen" name="Antrag bereitstellen">
-      <bpmn:incoming>SequenceFlow_01kxuf5</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1cv3yda</bpmn:outgoing>
-    </bpmn:userTask>
     <bpmn:sequenceFlow id="SequenceFlow_0f15g06" sourceRef="Task_1uh6066" targetRef="Task_0byiu4n" />
     <bpmn:userTask id="Task_1uh6066" name="Bachelorarbeit anmelden">
       <bpmn:extensionElements>
         <camunda:formData>
           <camunda:formField id="studentId" label="Matrikelnummer" type="long" />
           <camunda:formField id="thesis_title" label="Thema der Bachelorarbeit" type="string" />
+          <camunda:formField id="email" label="E-Mail" type="string" />
+          <camunda:formField id="supervisor" label="Betreuer" type="string" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_16pumae</bpmn:incoming>
@@ -301,7 +264,7 @@
       <bpmn:extensionElements>
         <camunda:connector>
           <camunda:inputOutput>
-            <camunda:inputParameter name="url"><![CDATA[http://localhost:8090/student?studentId=${studentId}&thesis_title=${thesis_title}]]></camunda:inputParameter>
+            <camunda:inputParameter name="url"><![CDATA[http://localhost:8090/student?studentId=${studentId}&thesis_title=${thesis_title}&supervisor=${supervisor}]]></camunda:inputParameter>
             <camunda:inputParameter name="method">GET</camunda:inputParameter>
             <camunda:inputParameter name="headers">
               <camunda:map>
@@ -344,6 +307,79 @@ childElement("isApprovedReturn").textContent()}]]></camunda:outputParameter>
       <bpmn:incoming>SequenceFlow_18f698a</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1cme36c</bpmn:outgoing>
     </bpmn:serviceTask>
+    <bpmn:sendTask id="Task_1s0ujmq" name="Zulassung genehmigen" camunda:class="de.fhaachen.gpm.practicum.Mail">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="subject">Zulassung genehmigt</camunda:inputParameter>
+          <camunda:inputParameter name="mailText">Sie sind zugelassen.</camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0h6ksgx</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1p9ag8t</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:exclusiveGateway id="voraussetzung" name="Voraussetzung">
+      <bpmn:incoming>SequenceFlow_1cme36c</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_01kxuf5</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_1qafgm7</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="SequenceFlow_0h6ksgx" sourceRef="Task_186xgsh" targetRef="Task_1s0ujmq" />
+    <bpmn:sequenceFlow id="SequenceFlow_1wq9eoz" sourceRef="Task_1fzrzo0" targetRef="zulassung_verweigern" />
+    <bpmn:sendTask id="zulassung_verweigern" name="Zulassung verweigern" camunda:class="de.fhaachen.gpm.practicum.Mail">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="subject">Zulassung verweigert</camunda:inputParameter>
+          <camunda:inputParameter name="mailText">Sie sind nicht zugelassen.</camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1wq9eoz</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1gloud1</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:serviceTask id="Task_186xgsh" name="Student zulassen">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="url"><![CDATA[http://localhost:8090/studentApproval?studentId=${studentId}&result=${result}]]></camunda:inputParameter>
+            <camunda:inputParameter name="method">GET</camunda:inputParameter>
+            <camunda:inputParameter name="headers">
+              <camunda:map>
+                <camunda:entry key="Accept">application/json</camunda:entry>
+              </camunda:map>
+            </camunda:inputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_01kxuf5</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0h6ksgx</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Task_1fzrzo0" name="Student nicht zulassen">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="url"><![CDATA[http://localhost:8090/studentApproval?studentId=${studentId}&result=${result}]]></camunda:inputParameter>
+            <camunda:inputParameter name="method">GET</camunda:inputParameter>
+            <camunda:inputParameter name="headers">
+              <camunda:map>
+                <camunda:entry key="Accept">application/json</camunda:entry>
+              </camunda:map>
+            </camunda:inputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1qafgm7</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1wq9eoz</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="keine_zulassung_erhalten" name="Keine Zulassung erhalten">
+      <bpmn:incoming>SequenceFlow_1gloud1</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_1gloud1" sourceRef="zulassung_verweigern" targetRef="keine_zulassung_erhalten" />
+    <bpmn:userTask id="Task_0oq4be9" name="Meilenstein1 beenden">
+      <bpmn:incoming>SequenceFlow_1p9ag8t</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0l29bup</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_1p9ag8t" sourceRef="Task_1s0ujmq" targetRef="Task_0oq4be9" />
+    <bpmn:sequenceFlow id="SequenceFlow_0l29bup" sourceRef="Task_0oq4be9" targetRef="bachelorarbeit_schreiben" />
     <bpmn:textAnnotation id="TextAnnotation_153szdd">    <bpmn:text>min. 6 Wochen</bpmn:text>
 </bpmn:textAnnotation>
     <bpmn:association id="Association_0xeu69v" sourceRef="bachelorarbeit_schreiben" targetRef="TextAnnotation_153szdd" />
@@ -468,9 +504,9 @@ childElement("isApprovedReturn").textContent()}]]></camunda:outputParameter>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ExclusiveGateway_05kuqon_di" bpmnElement="voraussetzung" isMarkerVisible="true">
-        <dc:Bounds x="-900" y="-406" width="50" height="50" />
+        <dc:Bounds x="-900" y="-545" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="-913" y="-424" width="75" height="12" />
+          <dc:Bounds x="-913" y="-563" width="75" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="StartEvent_180wmzd_di" bpmnElement="bachelorarbeit_beginnen">
@@ -480,19 +516,10 @@ childElement("isApprovedReturn").textContent()}]]></camunda:outputParameter>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_01kxuf5_di" bpmnElement="SequenceFlow_01kxuf5">
-        <di:waypoint xsi:type="dc:Point" x="-875" y="-356" />
-        <di:waypoint xsi:type="dc:Point" x="-875" y="-239" />
+        <di:waypoint xsi:type="dc:Point" x="-875" y="-495" />
+        <di:waypoint xsi:type="dc:Point" x="-875" y="-443.49557522123894" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="-909" y="-329" width="27" height="12" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_1cv3yda_di" bpmnElement="SequenceFlow_1cv3yda">
-        <di:waypoint xsi:type="dc:Point" x="-875" y="-159" />
-        <di:waypoint xsi:type="dc:Point" x="-875" y="192" />
-        <di:waypoint xsi:type="dc:Point" x="-875" y="192" />
-        <di:waypoint xsi:type="dc:Point" x="-875" y="543" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="-905" y="186" width="90" height="12" />
+          <dc:Bounds x="-908.9999999999999" y="-486.47311095983656" width="27" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_16pumae_di" bpmnElement="SequenceFlow_16pumae">
@@ -505,50 +532,15 @@ childElement("isApprovedReturn").textContent()}]]></camunda:outputParameter>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_1qafgm7_di" bpmnElement="SequenceFlow_1qafgm7">
-        <di:waypoint xsi:type="dc:Point" x="-850" y="-381" />
-        <di:waypoint xsi:type="dc:Point" x="-720" y="-381" />
+        <di:waypoint xsi:type="dc:Point" x="-850" y="-520" />
+        <di:waypoint xsi:type="dc:Point" x="-762" y="-520" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="-851.0000000000001" y="-404" width="54" height="12" />
+          <dc:Bounds x="-837.6355555555557" y="-539.7846153846157" width="54" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="SendTask_13edei4_di" bpmnElement="zulassung_verweigern">
-        <dc:Bounds x="-720" y="-421" width="100" height="80" />
+        <dc:Bounds x="-761" y="-379" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ReceiveTask_1hjcfvz_di" bpmnElement="benachrichtigung_erhalten">
-        <dc:Bounds x="-720" y="368" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="SequenceFlow_0umakwk_di" bpmnElement="SequenceFlow_0umakwk">
-        <di:waypoint xsi:type="dc:Point" x="-670" y="448" />
-        <di:waypoint xsi:type="dc:Point" x="-670" y="487" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="-700" y="461.5" width="90" height="12" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_06755ew_di" bpmnElement="SequenceFlow_06755ew">
-        <di:waypoint xsi:type="dc:Point" x="-825" y="583" />
-        <di:waypoint xsi:type="dc:Point" x="-493" y="583" />
-        <di:waypoint xsi:type="dc:Point" x="-493" y="505" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="-659" y="562" width="0" height="12" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_15e2326_di" bpmnElement="SequenceFlow_15e2326">
-        <di:waypoint xsi:type="dc:Point" x="-493" y="425" />
-        <di:waypoint xsi:type="dc:Point" x="-493" y="275" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="-478" y="344" width="0" height="12" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_0w9i1pj_di" bpmnElement="SequenceFlow_0w9i1pj">
-        <di:waypoint xsi:type="dc:Point" x="-493" y="195" />
-        <di:waypoint xsi:type="dc:Point" x="-493" y="-206" />
-        <di:waypoint xsi:type="dc:Point" x="-350" y="-206" />
-        <di:waypoint xsi:type="dc:Point" x="-350" y="461" />
-        <di:waypoint xsi:type="dc:Point" x="-257" y="461" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="-466.5" y="-227" width="90" height="12" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="BoundaryEvent_0a2n8lj_di" bpmnElement="BoundaryEvent_0a2n8lj">
         <dc:Bounds x="-175" y="403" width="36" height="36" />
         <bpmndi:BPMNLabel>
@@ -565,15 +557,6 @@ childElement("isApprovedReturn").textContent()}]]></camunda:outputParameter>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="ManualTask_0qv3s2u_di" bpmnElement="bachelorarbeit_schreiben">
         <dc:Bounds x="-257" y="421" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="UserTask_0wxktzz_di" bpmnElement="antrag_einreichen">
-        <dc:Bounds x="-543" y="425" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="UserTask_03qoou6_di" bpmnElement="zulassung_genehmigen">
-        <dc:Bounds x="-543" y="195" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ManualTask_170rq14_di" bpmnElement="antrag_unterschreiben">
-        <dc:Bounds x="-925" y="543" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="DataObjectReference_0rk3ynh_di" bpmnElement="DataObjectReference_0rk3ynh">
         <dc:Bounds x="-86.41448931116389" y="522.9133016627078" width="36" height="50" />
@@ -759,15 +742,6 @@ childElement("isApprovedReturn").textContent()}]]></camunda:outputParameter>
           <dc:Bounds x="2926" y="-208" width="21" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_0url2i3_di" bpmnElement="SequenceFlow_0url2i3">
-        <di:waypoint xsi:type="dc:Point" x="-670" y="-341" />
-        <di:waypoint xsi:type="dc:Point" x="-670" y="14" />
-        <di:waypoint xsi:type="dc:Point" x="-670" y="14" />
-        <di:waypoint xsi:type="dc:Point" x="-670" y="368" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="-655" y="8" width="0" height="12" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="EndEvent_1cvra1v_di" bpmnElement="verfassungszeit_ueberschritten">
         <dc:Bounds x="215" y="227" width="36" height="36" />
         <bpmndi:BPMNLabel>
@@ -791,9 +765,9 @@ childElement("isApprovedReturn").textContent()}]]></camunda:outputParameter>
         <di:waypoint xsi:type="dc:Point" x="-191" y="388" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="EndEvent_063vxrk_di" bpmnElement="keine_zulassung_erhalten">
-        <dc:Bounds x="-688" y="487" width="36" height="36" />
+        <dc:Bounds x="-729" y="-220" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="-710" y="527" width="81" height="24" />
+          <dc:Bounds x="-751" y="-180" width="81" height="24" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EndEvent_0kpomym_di" bpmnElement="bachelorarbeit_nicht_bestanden">
@@ -821,10 +795,10 @@ childElement("isApprovedReturn").textContent()}]]></camunda:outputParameter>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_1cme36c_di" bpmnElement="SequenceFlow_1cme36c">
         <di:waypoint xsi:type="dc:Point" x="-959" y="410" />
-        <di:waypoint xsi:type="dc:Point" x="-959" y="-381" />
-        <di:waypoint xsi:type="dc:Point" x="-900" y="-381" />
+        <di:waypoint xsi:type="dc:Point" x="-959" y="-520" />
+        <di:waypoint xsi:type="dc:Point" x="-900" y="-520" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="-989" y="8.5" width="90" height="12" />
+          <dc:Bounds x="-989" y="-61" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="ServiceTask_1j7v1yz_di" bpmnElement="voraussetzungen_ueberpruefen">
@@ -876,9 +850,6 @@ childElement("isApprovedReturn").textContent()}]]></camunda:outputParameter>
       <bpmndi:BPMNShape id="Task_0dnrfox_di" bpmnElement="voraussetzungen_ueberpruefen_kolloquium">
         <dc:Bounds x="709" y="-24" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="UserTask_0qnkygi_di" bpmnElement="antrag_bereitstellen">
-        <dc:Bounds x="-925" y="-239" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0f15g06_di" bpmnElement="SequenceFlow_0f15g06">
         <di:waypoint xsi:type="dc:Point" x="-1313" y="450" />
         <di:waypoint xsi:type="dc:Point" x="-1265.1277013752456" y="450" />
@@ -899,6 +870,57 @@ childElement("isApprovedReturn").textContent()}]]></camunda:outputParameter>
       <bpmndi:BPMNShape id="ServiceTask_14djrtj_di" bpmnElement="Task_0byiu4n">
         <dc:Bounds x="-1265" y="410" width="100" height="80" />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="SendTask_0barzj5_di" bpmnElement="Task_1s0ujmq">
+        <dc:Bounds x="-924" y="-290" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0h6ksgx_di" bpmnElement="SequenceFlow_0h6ksgx">
+        <di:waypoint xsi:type="dc:Point" x="-875" y="-363" />
+        <di:waypoint xsi:type="dc:Point" x="-874" y="-290" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="-874.5" y="-347.5" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1wq9eoz_di" bpmnElement="SequenceFlow_1wq9eoz">
+        <di:waypoint xsi:type="dc:Point" x="-711" y="-480" />
+        <di:waypoint xsi:type="dc:Point" x="-711" y="-379" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="-696" y="-435.5" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_0xvalph_di" bpmnElement="Task_186xgsh">
+        <dc:Bounds x="-924" y="-443" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_0ul0upt_di" bpmnElement="Task_1fzrzo0">
+        <dc:Bounds x="-760" y="-560" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1gloud1_di" bpmnElement="SequenceFlow_1gloud1">
+        <di:waypoint xsi:type="dc:Point" x="-711" y="-299" />
+        <di:waypoint xsi:type="dc:Point" x="-711" y="-220" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="-696" y="-265.5" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_0uedtui_di" bpmnElement="Task_0oq4be9">
+        <dc:Bounds x="-913" y="205" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1p9ag8t_di" bpmnElement="SequenceFlow_1p9ag8t">
+        <di:waypoint xsi:type="dc:Point" x="-874" y="-210" />
+        <di:waypoint xsi:type="dc:Point" x="-874" y="-2" />
+        <di:waypoint xsi:type="dc:Point" x="-863" y="-2" />
+        <di:waypoint xsi:type="dc:Point" x="-863" y="205" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="-868.5" y="-23" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0l29bup_di" bpmnElement="SequenceFlow_0l29bup">
+        <di:waypoint xsi:type="dc:Point" x="-813" y="245" />
+        <di:waypoint xsi:type="dc:Point" x="-535" y="245" />
+        <di:waypoint xsi:type="dc:Point" x="-535" y="461" />
+        <di:waypoint xsi:type="dc:Point" x="-257" y="461" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="-520" y="347" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
